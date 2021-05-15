@@ -15,7 +15,7 @@ for test_script in ./tests/*.sh; do
     echo "$test_script ..."
     "$test_script"
 
-    if [ "$?" == 1 ]; then
+    if [ "$?" = 1 ]; then
         docker-compose down -v
         echo ""
         echo "========================"

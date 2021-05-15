@@ -19,17 +19,17 @@ TAG="${1:-latest}"
 BASE_IMAGE="${2:-postgres:13-alpine}"
 CLICKHOUSE_FDW_REF="${3:-tags/1.3.0}"
 
-if [ "$(uname -m)" == 'x86_64' ]; then
+if [ "$(uname -m)" = 'x86_64' ]; then
     docker build \
         --build-arg BASE_IMAGE=${BASE_IMAGE} \
         --build-arg CLICKHOUSE_FDW_REF=${CLICKHOUSE_FDW_REF} \
         -t wavyfm/postgres-clickhouse:${TAG} .
 
-    if [ "$PUSH" == '1' ]; then
+    if [ "$PUSH" = '1' ]; then
         docker push wavyfm/postgres-clickhouse:${TAG}
     fi
 else
-    if [ "$PUSH" == '1' ]; then
+    if [ "$PUSH" = '1' ]; then
         ACTION=--push
     else
         ACTION=--load
