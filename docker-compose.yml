@@ -1,7 +1,7 @@
 version: '3'
 services:
   pg:
-    image: wavyfm/postgres-timescaledb-clickhouse:latest
+    image: wavyfm/postgres-clickhouse:latest
     environment:
       - POSTGRES_PASSWORD=test
       - CLICKHOUSE_FDW_DB=default
