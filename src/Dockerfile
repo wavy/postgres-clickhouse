@@ -7,8 +7,8 @@ RUN apk add --no-cache --virtual .build-deps make cmake build-base git
 RUN apk add --no-cache --virtual .runtime-deps coreutils curl-dev util-linux-dev
 
 WORKDIR /opt/build
-RUN git clone https://github.com/wavy/clickhouse_fdw /opt/build/clickhouse_fdw
 ARG CLICKHOUSE_FDW_REF
+RUN git clone https://github.com/wavy/clickhouse_fdw /opt/build/clickhouse_fdw
 RUN cd /opt/build/clickhouse_fdw && git checkout $CLICKHOUSE_FDW_REF
 
 WORKDIR /opt/build/clickhouse_fdw/build
