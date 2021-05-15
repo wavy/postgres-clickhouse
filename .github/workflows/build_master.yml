@@ -45,6 +45,4 @@ jobs:
           push: true
           context: ./src
           tags: wavyfm/postgres-clickhouse:${{ matrix.tag }}
-          build_args:
-            - BASE_IMAGE=${{ matrix.base }}
-            - CLICKHOUSE_FDW_REF=${{ matrix.clickhouse_fdw_ref }}
+          build_args: BASE_IMAGE=${{ matrix.base }},CLICKHOUSE_FDW_REF=${{ matrix.clickhouse_fdw_ref }}
