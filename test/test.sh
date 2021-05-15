@@ -1,5 +1,5 @@
 #!/bin/sh
-export TAG="${1:-latest}"
+export TAG="${1:-nightly}"
 
 # Clean up
 docker-compose down -v || true

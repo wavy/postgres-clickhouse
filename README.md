@@ -2,7 +2,7 @@
 
 A Docker image for [PostgreSQL](https://www.postgresql.org), the stable relational database, that can natively interact with [Clickhouse](https://clickhouse.tech), an incredibly fast columnar database.
 
-Specifically, it is a PostgreSQL Docker image with the [clickhouse_fdw](https://github.com/adjust/clickhouse_fdw) extension included and configured automatically. There is also a secondary image for combining [TimescaleDB](https://www.timescale.com) and clickhouse_fdw in the same image.
+Specifically, it is a PostgreSQL Docker image with the [clickhouse_fdw](https://github.com/wavy/clickhouse_fdw) extension included and configured automatically. There is also a secondary image for combining [TimescaleDB](https://www.timescale.com) and clickhouse_fdw in the same image.
 
 This image will always target the latest stable release from Postgres (currently 13).
 

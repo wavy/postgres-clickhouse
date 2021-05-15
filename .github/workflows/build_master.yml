@@ -18,13 +18,13 @@ jobs:
             clickhouse_fdw_ref: tags/1.3.0
           - tag: nightly
             base: postgres:13-alpine
-            clickhouse_fdw_ref: master
+            clickhouse_fdw_ref: wavy
           - tag: timescaledb-latest
             base: timescale/timescaledb:latest-pg13
             clickhouse_fdw_ref: tags/1.3.0
           - tag: timescaledb-nightly
             base: timescale/timescaledb:latest-pg13
-            clickhouse_fdw_ref: master
+            clickhouse_fdw_ref: wavy
 
     steps:
       - name: Checkout repository
