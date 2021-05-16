@@ -1,5 +1,6 @@
 #!/bin/sh
 export TAG="${1:-nightly}"
+export GLOB_PREFIX="${2}"
 
 # Clean up
 docker-compose down -v || true
@@ -7,7 +8,7 @@ docker-compose down -v || true
 # Apply template
 cat docker-compose-template.yml | envsubst > docker-compose.yml
 
-for test_script in ./tests/*.sh; do
+for test_script in ./tests/${GLOB_PREFIX}*.sh; do
     # Start up and give some time for boot
     docker-compose up -d
     sleep 5
@@ -16,7 +17,6 @@ for test_script in ./tests/*.sh; do
     "$test_script"
 
     if [ "$?" != 0 ]; then
-        docker-compose down -v
         echo ""
         echo "========================"
         echo " TEST FAILED"

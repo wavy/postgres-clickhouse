@@ -13,9 +13,9 @@
 set -e
 set -x
 
-TAG="${1:-nightly}"
-BASE_IMAGE="${2:-postgres:13-alpine}"
-CLICKHOUSE_FDW_REF="${3:-wavy}"
+CLICKHOUSE_FDW_REF="${1:-wavy}"
+TAG="${2:-nightly}"
+BASE_IMAGE="${3:-postgres:13-alpine}"
 
 if [ "$(uname -m)" = 'x86_64' ]; then
     docker build \
